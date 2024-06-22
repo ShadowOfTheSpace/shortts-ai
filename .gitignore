@@ -1,0 +1,15 @@
+# editors
+.vscode
+
+# env
+.env
+
+# build
+build
+
+# dependencies
+node_modules
+
+# next.js
+.next
+next-env.d.ts
