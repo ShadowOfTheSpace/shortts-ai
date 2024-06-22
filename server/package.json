@@ -1,0 +1,19 @@
+{
+  "author": "ShadowOfTheSpace",
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:dev": "tsx watch ./src/index.ts",
+    "start:prod": "npm run build && node ./build/index.js",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json"
+  },
+  "dependencies": {
+    "fastify": "4.28.0",
+    "@shortts-ai/shared": "*"
+  },
+  "devDependencies": {
+    "tsx": "4.15.7"
+  }
+}
