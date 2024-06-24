@@ -7,13 +7,15 @@
   "scripts": {
     "start:dev": "tsx watch ./src/index.ts",
     "start:prod": "npm run build && node ./build/index.js",
-    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json"
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && robocopy ./src/assets ./build/assets /E & exit 0"
   },
   "dependencies": {
+    "@shortts-ai/shared": "*",
     "fastify": "4.28.0",
-    "@shortts-ai/shared": "*"
+    "fluent-ffmpeg": "2.1.3"
   },
   "devDependencies": {
+    "@types/fluent-ffmpeg": "2.1.24",
     "tsx": "4.15.7"
   }
 }

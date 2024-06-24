@@ -1,0 +1,3 @@
+const DEFAULT_VIDEO_FPS = 60;
+
+export { DEFAULT_VIDEO_FPS };
