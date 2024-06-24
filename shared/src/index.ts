@@ -1,3 +1,4 @@
+export { FrameRate, VideoSize } from "./libs/enums/enums.js";
 export {
   getRadians,
   getRandomFloat,
