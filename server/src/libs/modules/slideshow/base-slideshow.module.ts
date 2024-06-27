@@ -1,6 +1,6 @@
 import ffmpeg from "fluent-ffmpeg";
 import { DEFAULT_VIDEO_FPS } from "./libs/constants/constants.js";
-import { FilterIOName } from "./libs/enums/enums.js";
+import { FilterIOName, VideoSize } from "./libs/enums/enums.js";
 import {
   getConcatFilter,
   getFlattenFilters,
@@ -55,17 +55,26 @@ class BaseSlideshow {
             getScaleFilters({
               count: imageCount,
               inputName: FilterIOName.DEFAULT,
-              outputName: FilterIOName.SCALED,
+              outputName: FilterIOName.SCALED_UP,
+              width: 3000,
+              height: -1,
             }),
             getImagesEffects({
               imagesDurations,
-              inputName: FilterIOName.SCALED,
+              inputName: FilterIOName.SCALED_UP,
               frameRate,
               outputName: FilterIOName.WITH_EFFECTS,
             }),
+            getScaleFilters({
+              count: imageCount,
+              inputName: FilterIOName.WITH_EFFECTS,
+              outputName: FilterIOName.SCALED_DOWN,
+              width: VideoSize.OUTPUT_WIDTH,
+              height: VideoSize.OUTPUT_HEIGHT,
+            }),
             getConcatFilter({
               imageCount,
-              inputName: FilterIOName.WITH_EFFECTS,
+              inputName: FilterIOName.SCALED_DOWN,
               outputName: FilterIOName.CONCATENATED,
             }),
             getSubtitleFilter({

@@ -13,8 +13,6 @@ const getSubtitleFilter = ({ filename, inputName, outputName }: Properties) => {
       filter: FilterName.SUBTITLES,
       options: {
         filename: `'${filename.replaceAll("\\", "\\\\").replace(":", "\\:")}'`,
-        force_style:
-          "Alignment=10,Fontname=Baloo 2 ExtraBold,Fontsize=20,Outline=5,ScaledBorderAndShadow=no",
         fontsdir: "'src\\\\assets\\\\fonts'",
       },
       output: { name: outputName },

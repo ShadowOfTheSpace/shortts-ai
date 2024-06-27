@@ -18,7 +18,7 @@ const getZoomPanFilter = ({
   animation: { x, y, zoom },
   duration,
   frameRate,
-  outputSize = { height: VideoSize.HEIGHT, width: VideoSize.WIDTH },
+  outputSize = { height: VideoSize.INPUT_HEIGHT, width: VideoSize.INPUT_HEIGHT },
   nameIndex,
   inputName,
   outputName,

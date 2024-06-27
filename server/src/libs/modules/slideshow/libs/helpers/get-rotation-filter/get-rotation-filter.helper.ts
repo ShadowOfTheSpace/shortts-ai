@@ -23,8 +23,8 @@ const getRotationFilter = ({
     filter: FilterName.ROTATE,
     options: {
       a: `${radians}*t`,
-      out_w: VideoSize.WIDTH,
-      out_h: VideoSize.HEIGHT,
+      out_w: VideoSize.INPUT_WIDTH,
+      out_h: VideoSize.INPUT_HEIGHT,
     },
     output: { name: outputName, nameIndex, isIndexed: true },
   });

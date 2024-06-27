@@ -3,7 +3,7 @@ const FilterName = {
   CONCAT: "concat",
   ROTATE: "rotate",
   SCALE: "scale",
-  SUBTITLES: "subtitles",
+  SUBTITLES: "ass",
   TRIM: "trim",
   ZOOM_PAN: "zoompan",
 } as const;

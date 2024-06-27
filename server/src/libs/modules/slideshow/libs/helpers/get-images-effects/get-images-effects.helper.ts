@@ -30,8 +30,8 @@ const getImagesEffects = ({
     const isLeftZoom = animation.title.includes("left");
 
     const { height, width } = getRotatedImageSize(
-      VideoSize.WIDTH,
-      VideoSize.HEIGHT,
+      VideoSize.INPUT_WIDTH,
+      VideoSize.INPUT_HEIGHT,
       angle * duration
     );
 
