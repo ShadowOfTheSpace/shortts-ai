@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import { config } from "~/libs/modules/config/config.js";
 
 const fastifyApp = fastify({
   logger: true
@@ -11,5 +12,6 @@ fastifyApp.get("/", (_request, response) => {
 });
 
 fastifyApp.listen({
-  port: 3001,
+  port: config.ENV.APP.PORT,
+  host: config.ENV.APP.HOST,
 });
