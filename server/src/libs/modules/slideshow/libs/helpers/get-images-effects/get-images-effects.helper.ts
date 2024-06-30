@@ -1,6 +1,6 @@
 import { getRandomFloat } from "~/libs/helpers/helpers.js";
-import { FilterIOName, RotationAngle, VideoSize } from "../../enums/enums.js";
-import { BaseFilter } from "../../types/types.js";
+import { FilterIOName, RotationAngle } from "../../enums/enums.js";
+import { type BaseFilter, type ScreenResolution } from "../../types/types.js";
 import { getBlurFilter } from "../get-blur-filter/get-blur-filter.helper.js";
 import { getRandomZoomPanAnimation } from "../get-random-zoom-pan-animation/get-random-zoom-pan-animation.helper.js";
 import { getRotatedImageSize } from "../get-rotated-image-size/get-rotated-image-size.helper.js";
@@ -9,13 +9,15 @@ import { getZoomPanFilter } from "../get-zoom-pan-filter/get-zoom-pan-filter.hel
 
 type Properties = {
   imagesDurations: number[];
+  inputResolution: ScreenResolution;
   frameRate: number;
 } & BaseFilter;
 
 const getImagesEffects = ({
-  imagesDurations,
-  inputName,
   frameRate,
+  imagesDurations,
+  inputResolution,
+  inputName,
   outputName,
 }: Properties) => {
   return imagesDurations.flatMap((duration, index) => {
@@ -30,8 +32,8 @@ const getImagesEffects = ({
     const isLeftZoom = animation.title.includes("left");
 
     const { height, width } = getRotatedImageSize(
-      VideoSize.INPUT_WIDTH,
-      VideoSize.INPUT_HEIGHT,
+      inputResolution.width,
+      inputResolution.height,
       angle * duration
     );
 
@@ -54,6 +56,7 @@ const getImagesEffects = ({
         nameIndex: index,
         inputName: FilterIOName.ZOOMED,
         outputName: FilterIOName.ROTATED,
+        inputResolution,
       }),
       getBlurFilter({
         from: 0,

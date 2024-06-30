@@ -1,6 +1,6 @@
 import ffmpeg from "fluent-ffmpeg";
 import { DEFAULT_VIDEO_FPS } from "./libs/constants/constants.js";
-import { FilterIOName, VideoSize } from "./libs/enums/enums.js";
+import { FilterIOName } from "./libs/enums/enums.js";
 import {
   getConcatFilter,
   getFlattenFilters,
@@ -9,17 +9,19 @@ import {
   getScaleFilters,
   getSubtitleFilter,
 } from "./libs/helpers/helpers.js";
-import { InputImage } from "./libs/types/types.js";
+import { type InputImage, type ScreenResolution } from "./libs/types/types.js";
 
 type Properties = {
   audioPath: string;
   frameRate?: number;
   images: InputImage[];
+  inputResolution: ScreenResolution;
   onError?: (error: unknown) => void;
   onEnd?: () => void;
   onStart?: (command: string) => void;
   onProgress?: (progress: { frames: number }) => void;
   outputFileName: string;
+  outputResolution?: ScreenResolution;
   subtitlePath: string;
 };
 
@@ -28,14 +30,18 @@ class BaseSlideshow {
     const {
       audioPath,
       images,
+      inputResolution,
       frameRate = DEFAULT_VIDEO_FPS,
       onEnd = () => {},
       onError = () => {},
       onStart = () => {},
       onProgress = () => {},
       outputFileName,
+      outputResolution = inputResolution,
       subtitlePath,
     } = options;
+
+    const hasScalingDown = outputResolution !== inputResolution;
 
     const imagesPaths = images.map(({ path }) => {
       return path;
@@ -64,17 +70,22 @@ class BaseSlideshow {
               inputName: FilterIOName.SCALED_UP,
               frameRate,
               outputName: FilterIOName.WITH_EFFECTS,
+              inputResolution,
             }),
-            getScaleFilters({
-              count: imageCount,
-              inputName: FilterIOName.WITH_EFFECTS,
-              outputName: FilterIOName.SCALED_DOWN,
-              width: VideoSize.OUTPUT_WIDTH,
-              height: VideoSize.OUTPUT_HEIGHT,
-            }),
+            hasScalingDown
+              ? getScaleFilters({
+                  count: imageCount,
+                  inputName: FilterIOName.WITH_EFFECTS,
+                  outputName: FilterIOName.SCALED_DOWN,
+                  width: outputResolution.width,
+                  height: outputResolution.height,
+                })
+              : [],
             getConcatFilter({
               imageCount,
-              inputName: FilterIOName.SCALED_DOWN,
+              inputName: hasScalingDown
+                ? FilterIOName.SCALED_DOWN
+                : FilterIOName.WITH_EFFECTS,
               outputName: FilterIOName.CONCATENATED,
             }),
             getSubtitleFilter({
@@ -89,8 +100,9 @@ class BaseSlideshow {
           `-map ${imageCount}:a`,
           "-pix_fmt yuv420p",
           "-shortest",
-          "-preset veryslow",
-          "-crf 8",
+          "-vcodec libx265",
+          "-preset fast",
+          "-crf 14",
         ])
         .on("start", onStart)
         .on("progress", onProgress)

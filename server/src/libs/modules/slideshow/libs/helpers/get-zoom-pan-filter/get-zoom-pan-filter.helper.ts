@@ -1,5 +1,4 @@
-import { DEFAULT_VIDEO_FPS } from "../../constants/constants.js";
-import { FilterName, VideoSize } from "../../enums/enums.js";
+import { FilterName } from "../../enums/enums.js";
 import { BaseFilter, ZoomPanAnimation } from "../../types/types.js";
 import { createFilter } from "../helpers.js";
 
@@ -7,7 +6,7 @@ type Properties = {
   animation: ZoomPanAnimation;
   duration: number;
   frameRate: number;
-  outputSize?: {
+  outputSize: {
     width: number;
     height: number;
   };
@@ -18,7 +17,7 @@ const getZoomPanFilter = ({
   animation: { x, y, zoom },
   duration,
   frameRate,
-  outputSize = { height: VideoSize.INPUT_HEIGHT, width: VideoSize.INPUT_HEIGHT },
+  outputSize,
   nameIndex,
   inputName,
   outputName,

@@ -1,2 +1,2 @@
 export { FrameRate } from "./frame-rate/frame-rate.enum.js";
-export { VideoSize } from "./video-size/video-size.enum.js";
+export { VideoResolution } from "./video-resolution/video-resolution.enum.js";
