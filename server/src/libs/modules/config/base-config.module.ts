@@ -37,6 +37,14 @@ class BaseConfig implements Config {
           format: Number,
         },
       },
+      DATABASE: {
+        CONNECTION_URL: {
+          default: null,
+          doc: "Database connection URL",
+          env: "DB_CONNECTION_URL",
+          format: String,
+        },
+      },
     });
   }
 }
