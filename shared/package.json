@@ -9,8 +9,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "build:copy": "robocopy ./src/libs/database/migrations ./build/src/libs/database/migrations /E & exit 0",
-    "generate": "npx drizzle-kit generate --name",
-    "drop":"npx drizzle-kit drop",
+    "migration:generate": "npx drizzle-kit generate --name",
+    "migration:drop":"npx drizzle-kit drop",
     "migrate": "node ./build/src/libs/database/migrate.js",
     "migrate:dev": "node --loader ts-node/esm ./src/libs/database/migrate.ts"
   },
