@@ -5,14 +5,15 @@
   "version": "1.0.0",
   "private": "true",
   "main": "./build/src/index.js",
-  "types": "./src/index.ts",
+  "types": "./build/src/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "build:copy": "robocopy ./src/libs/database/migrations ./build/src/libs/database/migrations /E & exit 0",
     "migration:generate": "npx drizzle-kit generate --name",
-    "migration:drop":"npx drizzle-kit drop",
+    "migration:drop": "npx drizzle-kit drop",
     "migrate": "node ./build/src/libs/database/migrate.js",
-    "migrate:dev": "node --loader ts-node/esm ./src/libs/database/migrate.ts"
+    "migrate:dev": "node --loader ts-node/esm ./src/libs/database/migrate.ts",
+    "studio": "npx drizzle-kit studio"
   },
   "dependencies": {
     "dotenv": "16.4.5",
