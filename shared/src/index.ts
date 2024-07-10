@@ -1,4 +1,13 @@
-export { db } from "./libs/database/database.js";
+export {
+  AudiosTable,
+  ImagesTable,
+  SubtitlesTable,
+  UploadedFilesTable,
+  VideosTable,
+  and,
+  db,
+  eq,
+} from "./libs/database/database.js";
 export {
   getRadians,
   getRandomFloat,
