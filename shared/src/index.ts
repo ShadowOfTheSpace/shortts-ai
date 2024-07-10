@@ -14,6 +14,11 @@ export {
   getRandomInteger,
 } from "./libs/helpers/helpers.js";
 export {
+  type AudioInsert,
+  type AudioSelect,
+  type CreateAudioRequestDto,
+} from "./modules/audios/audios.js";
+export {
   type CreateUploadedFileRequestDto,
   type UploadedFileInsert,
   type UploadedFileSelect,
