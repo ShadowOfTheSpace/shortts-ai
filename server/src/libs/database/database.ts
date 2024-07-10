@@ -1,5 +1,6 @@
 export {
   AudiosTable,
+  ImagesTable,
   SubtitlesTable,
   UploadedFilesTable,
   db,

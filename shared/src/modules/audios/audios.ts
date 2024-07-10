@@ -2,4 +2,4 @@ export {
   type AudioInsert,
   type AudioSelect,
   type CreateAudioRequestDto,
-} from "./libs/types/audio.js";
+} from "./libs/types/types.js";
