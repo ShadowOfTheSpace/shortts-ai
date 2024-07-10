@@ -37,7 +37,7 @@ class BaseConfig implements Config {
           format: Number,
         },
       },
-CLOUDINARY: {
+      CLOUDINARY: {
         API_KEY: {
           default: null,
           doc: "Cloudinary api key",
@@ -62,6 +62,26 @@ CLOUDINARY: {
           default: null,
           doc: "Database connection URL",
           env: "DB_CONNECTION_URL",
+          format: String,
+        },
+      },
+      OPEN_AI: {
+        API_KEY: {
+          default: null,
+          doc: "OpenAI api key",
+          env: "OPEN_AI_API_KEY",
+          format: String,
+        },
+        CHAT_MODEL: {
+          default: null,
+          doc: "OpenAI chat model",
+          env: "OPEN_AI_CHAT_MODEL",
+          format: String,
+        },
+        VOICE_MODEL: {
+          default: null,
+          doc: "OpenAI voice model",
+          env: "OPEN_AI_VOICE_MODEL",
           format: String,
         },
       },
