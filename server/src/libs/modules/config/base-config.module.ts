@@ -37,6 +37,26 @@ class BaseConfig implements Config {
           format: Number,
         },
       },
+CLOUDINARY: {
+        API_KEY: {
+          default: null,
+          doc: "Cloudinary api key",
+          env: "CLOUDINARY_API_KEY",
+          format: String,
+        },
+        API_SECRET: {
+          default: null,
+          doc: "Cloudinary api secret",
+          env: "CLOUDINARY_API_SECRET",
+          format: String,
+        },
+        CLOUD_NAME: {
+          default: null,
+          doc: "Cloudinary cloud name",
+          env: "CLOUDINARY_CLOUD_NAME",
+          format: String,
+        },
+      },
       DATABASE: {
         CONNECTION_URL: {
           default: null,
