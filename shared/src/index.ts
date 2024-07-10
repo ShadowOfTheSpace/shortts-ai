@@ -13,4 +13,8 @@ export {
   getRandomFloat,
   getRandomInteger,
 } from "./libs/helpers/helpers.js";
-export { type ScreenResolution, type ValueOf } from "./libs/types/types.js";
+export {
+  type CreateUploadedFileRequestDto,
+  type UploadedFileInsert,
+  type UploadedFileSelect,
+} from "./modules/uploaded-files/uploaded-files.js";
