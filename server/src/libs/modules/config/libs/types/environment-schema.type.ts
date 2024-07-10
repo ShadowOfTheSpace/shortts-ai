@@ -6,6 +6,9 @@ type EnvironmentSchema = {
   DATABASE: {
     CONNECTION_URL: string;
   };
+  REPLICATE: {
+    API_KEY: string;
+  };
 };
 
 export { type EnvironmentSchema };

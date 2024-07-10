@@ -45,6 +45,14 @@ class BaseConfig implements Config {
           format: String,
         },
       },
+      REPLICATE: {
+        API_KEY: {
+          default: null,
+          doc: "Replicate api key",
+          env: "REPLICATE_API_KEY",
+          format: String,
+        },
+      },
     });
   }
 }
