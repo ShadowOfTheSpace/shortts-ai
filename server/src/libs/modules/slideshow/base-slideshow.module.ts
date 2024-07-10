@@ -9,12 +9,13 @@ import {
   getScaleFilters,
   getSubtitleFilter,
 } from "./libs/helpers/helpers.js";
-import { type InputImage, type ScreenResolution } from "./libs/types/types.js";
+import { type InputImages, type ScreenResolution } from "./libs/types/types.js";
 
 type Properties = {
   audioPath: string;
+  debug?: boolean;
   frameRate?: number;
-  images: InputImage[];
+  images: InputImages;
   inputResolution: ScreenResolution;
   onError?: (error: unknown) => void;
   onEnd?: () => void;
@@ -22,15 +23,16 @@ type Properties = {
   onProgress?: (progress: { frames: number }) => void;
   outputFileName: string;
   outputResolution?: ScreenResolution;
-  subtitlePath: string;
+  subtitlesPath: string;
 };
 
 class BaseSlideshow {
   public generate(options: Properties) {
     const {
       audioPath,
-      images,
+      images: { durations: imagesDurations, paths: imagesPaths },
       inputResolution,
+      debug = false,
       frameRate = DEFAULT_VIDEO_FPS,
       onEnd = () => {},
       onError = () => {},
@@ -38,20 +40,13 @@ class BaseSlideshow {
       onProgress = () => {},
       outputFileName,
       outputResolution = inputResolution,
-      subtitlePath,
+      subtitlesPath,
     } = options;
 
-    const hasScalingDown = outputResolution !== inputResolution;
+    const hasScalingDown =
+      JSON.stringify(outputResolution) !== JSON.stringify(inputResolution);
 
-    const imagesPaths = images.map(({ path }) => {
-      return path;
-    });
-
-    const imagesDurations = images.map(({ duration }) => {
-      return duration;
-    });
-
-    const imageCount = images.length;
+    const imageCount = imagesPaths.length;
 
     try {
       ffmpeg()
@@ -89,7 +84,7 @@ class BaseSlideshow {
               outputName: FilterIOName.CONCATENATED,
             }),
             getSubtitleFilter({
-              filename: subtitlePath,
+              filename: subtitlesPath,
               inputName: FilterIOName.CONCATENATED,
               outputName: FilterIOName.WITH_SUBTITLES,
             })
@@ -102,12 +97,21 @@ class BaseSlideshow {
           "-shortest",
           "-vcodec libx265",
           "-preset fast",
-          "-crf 14",
+          "-crf 18",
         ])
         .on("start", onStart)
+        .on("start", (command) => {
+          debug && console.log(command);
+        })
         .on("progress", onProgress)
+        .on("progress", (progress) => {
+          debug && console.log(progress);
+        })
         .on("end", onEnd)
         .on("error", onError)
+        .on("error", (err, stdout, stderr) => {
+          debug && console.log(err, stdout, stderr);
+        })
         .saveToFile(outputFileName);
     } catch (error: unknown) {
       if (error instanceof Error && !error.message.includes("isStream")) {
