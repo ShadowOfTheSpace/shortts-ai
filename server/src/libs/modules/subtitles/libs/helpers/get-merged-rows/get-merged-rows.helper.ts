@@ -1,4 +1,4 @@
-import { SubtitleRow } from "../../types/subtitle-row.type.js";
+import { type SubtitleRow } from "../../types/types.js";
 
 const getMergedRows = (subtitleRows: SubtitleRow[]): SubtitleRow => {
   const newStart = subtitleRows[0]?.start;

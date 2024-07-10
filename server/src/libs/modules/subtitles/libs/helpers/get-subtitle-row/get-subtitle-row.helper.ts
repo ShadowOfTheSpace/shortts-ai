@@ -8,11 +8,11 @@ type Properties = {
 };
 
 const getSubtitleRow = ({ animation, end, start, text }: Properties) => {
-  const formattedStart = formatTimestamp(start, {
+  const formattedStart = formatTimestamp(start * 1000, {
     format: "WebVTT",
   }).substring(1, 11);
 
-  const formattedEnd = formatTimestamp(end, { format: "WebVTT" }).substring(
+  const formattedEnd = formatTimestamp(end * 1000, { format: "WebVTT" }).substring(
     1,
     11
   );

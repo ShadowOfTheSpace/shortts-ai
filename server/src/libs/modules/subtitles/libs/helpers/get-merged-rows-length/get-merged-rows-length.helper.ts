@@ -1,11 +1,11 @@
-import { SubtitleRow } from "../../types/subtitle-row.type.js";
+import { type SubtitleRow } from "../../types/types.js";
 
 const getMergedRowsLength = (rows: SubtitleRow[]) => {
   return rows
     .map(({ text }) => {
       return text;
     })
-    .join(" ")
+    .join("")
     .trim().length;
 };
 
