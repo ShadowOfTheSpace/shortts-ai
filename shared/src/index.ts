@@ -8,7 +8,13 @@ export {
   db,
   eq,
 } from "./libs/database/database.js";
-export { FrameRate } from "./libs/enums/enums.js";
+export {
+  APIPath,
+  FrameRate,
+  HTTPCode,
+  HTTPMethod,
+} from "./libs/enums/enums.js";
+export { ValidationError } from "./libs/exceptions/exceptions.js";
 export {
   getRadians,
   getRandomFloat,
@@ -18,6 +24,7 @@ export { imageQualityToScreenResolution } from "./libs/maps/maps.js";
 export {
   type ScreenResolution,
   type SubtitleRow,
+  type ValidationSchema,
   type ValueOf,
 } from "./libs/types/types.js";
 export {
