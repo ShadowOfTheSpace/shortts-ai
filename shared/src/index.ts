@@ -48,6 +48,8 @@ export {
   type UploadedFileSelect,
 } from "./modules/uploaded-files/uploaded-files.js";
 export {
+  VideosApiPath,
+  videoCreateValidationSchema,
   type CreateVideoRequestDto,
   type UpdateVideoRequestDto,
   type VideoInsert,

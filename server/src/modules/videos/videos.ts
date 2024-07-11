@@ -6,6 +6,7 @@ import { subtitlesService } from "~/modules/subtitles/subtitles.js";
 import { uploadedFileService } from "~/modules/uploaded-files/uploaded-files.js";
 import { VideoRepository } from "./video.repository.js";
 import { VideoService } from "./video.service.js";
+import { VideoController } from "./video.controller.js";
 
 const videoRepository = new VideoRepository();
 
@@ -19,4 +20,6 @@ const videoService = new VideoService({
   videoRepository,
 });
 
-export { videoService };
+const videoController = new VideoController(videoService);
+
+export { videoController };

@@ -1,0 +1,1 @@
+export { VideosApiPath } from "@shortts-ai/shared";
