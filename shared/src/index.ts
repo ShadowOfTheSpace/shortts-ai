@@ -1,3 +1,4 @@
+export { MAX_SAFE_INTEGER } from "./libs/constants/constants.js";
 export {
   AudiosTable,
   ImagesTable,
@@ -8,6 +9,7 @@ export {
   db,
   eq,
 } from "./libs/database/database.js";
+export { FrameRate } from "./libs/enums/enums.js";
 export {
   getRadians,
   getRandomFloat,
@@ -39,3 +41,9 @@ export {
   type UploadedFileInsert,
   type UploadedFileSelect,
 } from "./modules/uploaded-files/uploaded-files.js";
+export {
+  type CreateVideoRequestDto,
+  type UpdateVideoRequestDto,
+  type VideoInsert,
+  type VideoSelect,
+} from "./modules/videos/videos.js";
