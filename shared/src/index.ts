@@ -5,7 +5,6 @@ export {
   SubtitlesTable,
   UploadedFilesTable,
   VideosTable,
-  and,
   db,
   eq,
 } from "./libs/database/database.js";
