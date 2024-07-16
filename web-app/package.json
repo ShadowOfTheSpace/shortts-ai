@@ -10,6 +10,7 @@
   "dependencies": {
     "@shortts-ai/shared": "*",
     "arctic": "1.9.2",
+    "bcrypt": "5.1.1",
     "clsx": "2.1.1",
     "convict": "6.2.4",
     "dotenv": "16.4.5",
@@ -20,6 +21,7 @@
     "tailwind-merge": "2.4.0",
   },
   "devDependencies": {
+    "@types/bcrypt": "5.0.2",
     "@types/convict": "6.1.6",
     "@types/node": "20.14.7",
     "@types/react": "18.3.3",
