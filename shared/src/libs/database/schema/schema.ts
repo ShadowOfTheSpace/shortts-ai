@@ -213,6 +213,23 @@ const SubtitlesRelations = relations(SubtitlesTable, ({ one }) => {
   };
 });
 
+const UsersTable = pgTable("users", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  email: text("email").notNull().unique(),
+  passwordHash: text("password_hash").notNull(),
+  createdAt: timestamp("created_at", {
+    withTimezone: true,
+  })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => {
+      return new Date();
+    }),
+});
+
 export {
   AudioRelations,
   AudiosTable,
@@ -224,6 +241,7 @@ export {
   SubtitlesRelations,
   SubtitlesTable,
   UploadedFilesTable,
+  UsersTable,
   VideoRelations,
   VideosTable,
   VideoStatusEnum,
