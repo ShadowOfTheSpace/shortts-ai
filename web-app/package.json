@@ -8,6 +8,8 @@
     "start:prod": "next start"
   },
   "dependencies": {
+    "@conform-to/react": "1.1.5",
+    "@conform-to/zod": "1.1.5",
     "@shortts-ai/shared": "*",
     "arctic": "1.9.2",
     "bcrypt": "5.1.1",
@@ -18,7 +20,9 @@
     "lucide-react": "0.408.0",
     "next": "14.2.4",
     "react": "18.3.1",
+    "react-dom": "18.3.1",
     "tailwind-merge": "2.4.0",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@types/bcrypt": "5.0.2",

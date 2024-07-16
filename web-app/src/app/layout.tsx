@@ -9,7 +9,7 @@ type Properties = {
 const RootLayout: React.FC<Properties> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-roboto`}>{children}</body>
+      <body className={`${roboto.variable} font-roboto text-text`}>{children}</body>
     </html>
   );
 };
