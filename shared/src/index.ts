@@ -4,6 +4,7 @@ export {
   ImagesTable,
   SubtitlesTable,
   UploadedFilesTable,
+  UsersTable,
   VideosTable,
   db,
   eq,
@@ -47,6 +48,11 @@ export {
   type UploadedFileInsert,
   type UploadedFileSelect,
 } from "./modules/uploaded-files/uploaded-files.js";
+export {
+  type UserInsert,
+  type UserSelect,
+  type UserSignIn,
+} from "./modules/users/users.js";
 export {
   VideosApiPath,
   videoCreateValidationSchema,
