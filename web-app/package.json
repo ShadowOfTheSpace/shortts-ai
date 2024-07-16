@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@shortts-ai/shared": "*",
+    "arctic": "1.9.2",
     "clsx": "2.1.1",
     "convict": "6.2.4",
     "dotenv": "16.4.5",

@@ -39,6 +39,26 @@ class BaseConfig implements Config {
           format: String,
         },
       },
+      GOOGLE: {
+        CALLBACK_URL: {
+          default: null,
+          doc: "Google callback url",
+          env: "GOOGLE_CALLBACK_URL",
+          format: String,
+        },
+        CLIENT_ID: {
+          default: null,
+          doc: "Google client id",
+          env: "GOOGLE_CLIENT_ID",
+          format: String,
+        },
+        CLIENT_SECRET: {
+          default: null,
+          doc: "Google client secret",
+          env: "GOOGLE_CLIENT_SECRET",
+          format: String,
+        },
+      },
       JWT: {
         ALGORITHM: {
           default: null,
