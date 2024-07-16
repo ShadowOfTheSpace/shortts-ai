@@ -1,4 +1,7 @@
 type EnvironmentSchema = {
+  APP: {
+    ENVIRONMENT: string;
+  };
   DATABASE: {
     CONNECTION_URL: string;
   };

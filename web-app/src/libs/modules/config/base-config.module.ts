@@ -23,6 +23,14 @@ class BaseConfig implements Config {
 
   private get envSchema(): LibraryConfig<EnvironmentSchema> {
     return convict<EnvironmentSchema>({
+      APP: {
+        ENVIRONMENT: {
+          default: null,
+          doc: "Application environment",
+          env: "NEXT_APP_ENV",
+          format: String,
+        },
+      },
       DATABASE: {
         CONNECTION_URL: {
           default: null,
