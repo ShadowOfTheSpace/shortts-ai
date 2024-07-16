@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import { roboto } from "~/assets/fonts/fonts";
 import "./globals.css";
 
 type Properties = {
@@ -8,7 +9,7 @@ type Properties = {
 const RootLayout: React.FC<Properties> = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${roboto.variable} font-roboto`}>{children}</body>
     </html>
   );
 };
