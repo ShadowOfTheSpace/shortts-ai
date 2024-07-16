@@ -1,4 +1,4 @@
-import { mkdirSync } from "fs";
+import { mkdirSync, rmdirSync } from "fs";
 import { randomInt } from "node:crypto";
 import {
   AUDIO_FILENAME,
@@ -156,6 +156,21 @@ class VideoService {
       userPrompt,
       "json"
     );
+
+    if (prompts.length !== textBySentences.length) {
+      rmdirSync(directoryPath);
+      console.log("ChatGPT wrong response.");
+      console.log(textBySentences);
+      console.log(prompts);
+      this.create({
+        colorPalette,
+        quality,
+        style,
+        id: videoId,
+        voice,
+      });
+      return;
+    }
 
     const text = textBySentences
       .map(({ sentence }) => {
