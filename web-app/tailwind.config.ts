@@ -17,6 +17,10 @@ const config: Config = {
       fontFamily: {
         roboto: ["var(--font-roboto)"],
       },
+      screens: {
+        "has-hover": { raw: "(hover: hover) and (pointer: fine)" },
+        "no-hover": { raw: "(hover: none) or (pointer: coarse)" },
+      },
     },
   },
 };
