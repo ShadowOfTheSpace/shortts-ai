@@ -8,7 +8,7 @@ import { SignInForm } from "./_libs/components/components";
 
 const SignInPage: React.FC = () => {
   return (
-    <div className="flex flex-col items-center gap-[20px] bg-tertiary shadow-md p-[40px] border rounded-[12px]">
+    <div className="flex flex-col items-center gap-[20px] bg-tertiary shadow-md p-[40px] rounded-[12px]">
       <h1 className="font-bold text-[40px] text-center">Sign In</h1>
       <SignInForm />
       <AuthDivider />
