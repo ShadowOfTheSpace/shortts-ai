@@ -1,4 +1,4 @@
-import { UsersTable, db, eq } from "~/libs/database/database";
+import { UsersTable, db, eq } from "~/_libs/database/database";
 import { type UserInsert } from "./libs/types/types";
 
 class UserDao {

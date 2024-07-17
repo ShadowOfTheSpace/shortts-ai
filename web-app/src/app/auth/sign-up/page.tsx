@@ -1,10 +1,10 @@
-import { AppRoute } from "~/libs/enums/enums";
+import { AppRoute } from "~/_libs/enums/enums";
 import {
   AuthActionLink,
   AuthDivider,
   GoogleOauthForm,
-} from "../libs/components/components";
-import { SignUpForm } from "./libs/components/components";
+} from "../_libs/components/components";
+import { SignUpForm } from "./_libs/components/components";
 
 const SignUpPage: React.FC = () => {
   return (

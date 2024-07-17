@@ -1,15 +1,15 @@
 import { hash as bcryptHash } from "bcrypt";
 import { type NextRequest, NextResponse } from "next/server";
-import { DEFAULT_SALT_ROUNDS } from "~/libs/constants/constants";
-import { AppRoute, CookiesName, HTTPCode } from "~/libs/enums/enums";
+import { DEFAULT_SALT_ROUNDS } from "~/_libs/constants/constants";
+import { AppRoute, CookiesName, HTTPCode } from "~/_libs/enums/enums";
 import {
   auth,
   googleAuth,
   GoogleAuthError,
   GoogleAuthErrorMessage,
-} from "~/libs/modules/auth/auth";
+} from "~/_libs/modules/auth/auth";
 import { userDao } from "~/modules/users/users";
-import { getUrlWithQueryParams } from "~/utils/utils";
+import { getUrlWithQueryParams } from "~/_utils/utils";
 
 const GET = async (request: NextRequest) => {
   const searchParams = request.nextUrl.searchParams;

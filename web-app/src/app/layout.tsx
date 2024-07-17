@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { roboto } from "~/assets/fonts/fonts";
+import { roboto } from "~/_assets/fonts/fonts";
 import "./globals.css";
 
 type Properties = {

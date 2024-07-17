@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
-import { AppRoute } from "~/libs/enums/enums";
-import { auth } from "~/libs/modules/auth/auth";
+import { AppRoute } from "~/_libs/enums/enums";
+import { auth } from "~/_libs/modules/auth/auth";
 
 type Properties = {
   children: React.ReactNode;
