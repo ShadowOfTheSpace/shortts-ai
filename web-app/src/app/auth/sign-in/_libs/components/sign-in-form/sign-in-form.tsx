@@ -4,7 +4,7 @@ import { parseWithZod } from "@conform-to/zod";
 import { useFormState } from "react-dom";
 import { Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
-import { userAuthValidationSchema } from "~/modules/users/users.client";
+import { userAuthValidationSchema } from "~/_modules/users/users.client";
 import { signIn } from "../../actions/actions";
 import { SignInButton } from "../sign-in-button/sign-in-button";
 import { AuthErrors } from "~/app/auth/_libs/components/components";

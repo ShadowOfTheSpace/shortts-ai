@@ -1,5 +1,5 @@
 import { Google } from "arctic";
-import { userDao } from "~/modules/users/users";
+import { userDao } from "~/_modules/users/users";
 import { config } from "../config/config";
 import { token } from "../token/token";
 import { BaseAuth } from "./base-auth.module";

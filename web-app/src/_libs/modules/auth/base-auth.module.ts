@@ -2,8 +2,8 @@
 import { cookies } from "next/headers";
 import { cache } from "react";
 import { CookiesName } from "~/_libs/enums/enums";
-import { type UserDto } from "~/modules/users/libs/types/types";
-import { UserDao } from "~/modules/users/user-dao";
+import { type UserDto } from "~/_modules/users/libs/types/types";
+import { UserDao } from "~/_modules/users/user-dao";
 import { type Config } from "../config/config";
 import { type Token, type TokenPayload } from "../token/token";
 import { COOKIES_AUTH_MAX_AGE } from "./libs/constants/constants";

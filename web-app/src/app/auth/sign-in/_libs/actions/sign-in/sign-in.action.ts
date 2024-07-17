@@ -6,8 +6,8 @@ import { AppRoute } from "~/_libs/enums/enums";
 import { auth } from "~/_libs/modules/auth/auth";
 import { type ActionErrorState } from "~/_libs/types/types";
 import { formatValidationError } from "~/_utils/utils";
-import { userDao } from "~/modules/users/users";
-import { userAuthValidationSchema } from "~/modules/users/users.client";
+import { userDao } from "~/_modules/users/users";
+import { userAuthValidationSchema } from "~/_modules/users/users.client";
 
 const signIn = async (
   _error: ActionErrorState,
