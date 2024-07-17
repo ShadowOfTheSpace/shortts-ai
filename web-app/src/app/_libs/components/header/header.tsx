@@ -5,7 +5,7 @@ import { Navigation } from "./libs/components/components";
 
 const Header: React.FC = () => {
   return (
-    <header className="flex justify-center bg-background w-full">
+    <header className="top-0 z-10 sticky flex justify-center bg-background/65 backdrop-blur-md w-full">
       <div className="flex justify-between items-center gap-[60px] px-[30px] py-[15px] w-full max-w-[1500px]">
         <Link href="/">
           <Image alt="Shortts-ai-logo" src={logo} priority={true} />
