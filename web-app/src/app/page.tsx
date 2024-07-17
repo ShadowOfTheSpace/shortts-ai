@@ -1,5 +1,11 @@
-const Page: React.FC = async () => {
-  return <>Home page</>;
+import { Header } from "./_libs/components/components";
+
+const LandingPage: React.FC = async () => {
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
-export default Page;
+export default LandingPage;
