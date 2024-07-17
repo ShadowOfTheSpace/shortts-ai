@@ -6,7 +6,7 @@ import {
 } from "../libs/components/components";
 import { SignUpForm } from "./libs/components/components";
 
-const SignUp: React.FC = () => {
+const SignUpPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center gap-[20px] bg-tertiary shadow-md p-[40px] border rounded-[12px]">
       <h1 className="font-bold text-[40px] text-center">Sign Up</h1>
@@ -23,4 +23,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default SignUpPage;

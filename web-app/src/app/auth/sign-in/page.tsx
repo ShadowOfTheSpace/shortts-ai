@@ -6,7 +6,7 @@ import {
 } from "../libs/components/components";
 import { SignInForm } from "./libs/components/components";
 
-const SignIn: React.FC = () => {
+const SignInPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center gap-[20px] bg-tertiary shadow-md p-[40px] border rounded-[12px]">
       <h1 className="font-bold text-[40px] text-center">Sign In</h1>
@@ -23,4 +23,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignInPage;
