@@ -15,6 +15,7 @@ const config: Config = {
         text: "#130C18",
       },
       fontFamily: {
+        baloo: ["var(--font-baloo)"],
         roboto: ["var(--font-roboto)"],
       },
       screens: {

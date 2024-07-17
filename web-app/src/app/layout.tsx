@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { roboto } from "~/_assets/fonts/fonts";
+import { baloo, roboto } from "~/_assets/fonts/fonts";
 import "./globals.css";
 
 type Properties = {
@@ -9,7 +9,11 @@ type Properties = {
 const RootLayout: React.FC<Properties> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-roboto text-text`}>{children}</body>
+      <body
+        className={`${baloo.variable} ${roboto.variable} font-roboto text-text`}
+      >
+        {children}
+      </body>
     </html>
   );
 };
