@@ -1,5 +1,8 @@
 type IconName =
   | "alert"
+  | "check"
+  | "chevronDown"
+  | "chevronUp"
   | "chrome"
   | "clapperboard"
   | "creditCard"

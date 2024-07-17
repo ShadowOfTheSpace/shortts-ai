@@ -1,5 +1,8 @@
 import {
   AlertTriangle,
+  Check,
+  ChevronDown,
+  ChevronUp,
   Chrome,
   Clapperboard,
   CreditCard,
@@ -20,6 +23,9 @@ const iconNameToIcon: Record<
   >
 > = {
   alert: AlertTriangle,
+  check: Check,
+  chevronDown: ChevronDown,
+  chevronUp: ChevronUp,
   chrome: Chrome,
   clapperboard: Clapperboard,
   creditCard: CreditCard,

@@ -10,6 +10,7 @@
   "dependencies": {
     "@conform-to/react": "1.1.5",
     "@conform-to/zod": "1.1.5",
+    "@radix-ui/react-select": "2.1.1",
     "@shortts-ai/shared": "*",
     "arctic": "1.9.2",
     "bcrypt": "5.1.1",
