@@ -1,3 +1,5 @@
+"use client";
+import { type FieldMetadata, useInputControl } from "@conform-to/react";
 import {
   Content as RadixSelectContent,
   Icon as RadixSelectIcon,
@@ -9,54 +11,76 @@ import {
   Trigger as RadixSelectTrigger,
   Value as RadixSelectValue,
 } from "@radix-ui/react-select";
+import { useCallback, useRef } from "react";
 import { cn } from "~/_utils/utils";
 import { Icon } from "../components";
 import { SelectItem } from "./libs/components/components";
 
 type Properties = {
   children: React.ReactElement<typeof SelectItem>[];
+  metadata: FieldMetadata<string>;
   className?: string;
-  defaultValue?: string;
   isDisabled?: boolean;
-  errors?: string[];
-  id?: string;
   label?: string;
-  name?: string;
   placeholder?: string;
 };
 
 const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
   children,
+  metadata,
   className,
-  defaultValue,
-  errors,
-  id,
   isDisabled,
   label,
-  name,
   placeholder,
 }) => {
+  const controls = useInputControl(metadata);
+
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+
+  const handleFocus = useCallback(() => {
+    if (triggerRef.current) {
+      triggerRef.current.focus();
+    }
+  }, [triggerRef]);
+
+  const handleOpenChange = useCallback((isOpen: boolean) => {
+    if (!isOpen) {
+      controls.blur();
+    }
+  }, []);
+
   return (
     <div className="flex flex-col gap-[2px]">
       {label && (
-        <label htmlFor={id} className="font-bold text-[16px]">
+        <label htmlFor={metadata.id} className="font-bold text-[16px]">
           {label}
         </label>
       )}
+      <input
+        name={metadata.name}
+        className="sr-only"
+        tabIndex={-1}
+        onFocus={handleFocus}
+      />
       <RadixSelectRoot
-        defaultValue={defaultValue}
         disabled={isDisabled}
-        name={name}
+        value={controls.value}
+        onValueChange={controls.change}
+        onOpenChange={handleOpenChange}
       >
         <RadixSelectTrigger
-          id={id}
+          id={metadata.id}
           className={cn(
             "flex justify-between items-center border-divider disabled:opacity-50 px-[12px] py-[8px] [&>span]:line-clamp-1 border rounded-[6px] text-[16px] [&>span]:text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus:ring-2 focus:ring-primary [&>span]:min-h-[calc(1em*1.5)]",
             className
           )}
+          ref={triggerRef}
         >
           <RadixSelectValue placeholder={placeholder} />
-          <RadixSelectIcon className="text-divider shrink-0">
+          <RadixSelectIcon
+            asChild
+            className="flex justify-center items-center text-divider shrink-0"
+          >
             <Icon name="chevronDown" />
           </RadixSelectIcon>
         </RadixSelectTrigger>
@@ -78,10 +102,10 @@ const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
       <span
         className={cn(
           "text-[12px] text-error min-h-[calc(1em*1.5)] ml-[5px]",
-          !errors && "opacity-0"
+          !metadata.errors && "opacity-0"
         )}
       >
-        {errors ? (errors[0] as string) : ""}
+        {metadata.errors ? (metadata.errors[0] as string) : ""}
       </span>
     </div>
   );
