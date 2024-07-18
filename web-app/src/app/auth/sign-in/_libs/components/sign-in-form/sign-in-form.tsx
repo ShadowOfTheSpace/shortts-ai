@@ -1,14 +1,14 @@
 "use client";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
+import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
 import { Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
-import { userAuthValidationSchema } from "~/_modules/users/users.client";
+import { userAuthValidationSchema } from "~/_modules/users/users";
+import { AuthErrors } from "~/app/auth/_libs/components/components";
 import { signIn } from "../../actions/actions";
 import { SignInButton } from "../sign-in-button/sign-in-button";
-import { AuthErrors } from "~/app/auth/_libs/components/components";
-import { useSearchParams } from "next/navigation";
 
 const SignInForm: React.FC = () => {
   const searchParams = useSearchParams();

@@ -8,7 +8,7 @@ import {
   GoogleAuthError,
   GoogleAuthErrorMessage,
 } from "~/_libs/modules/auth/auth";
-import { userDao } from "~/_modules/users/users";
+import { userDao } from "~/_modules/users/users.server-only";
 import { getUrlWithQueryParams } from "~/_utils/utils";
 
 const GET = async (request: NextRequest) => {

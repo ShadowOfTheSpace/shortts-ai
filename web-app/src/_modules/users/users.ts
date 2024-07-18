@@ -1,5 +1,1 @@
-import { UserDao } from "./user-dao";
-
-const userDao = new UserDao();
-
-export { userDao };
+export { userAuth as userAuthValidationSchema } from "./libs/validation-schemas/validation-schemas";

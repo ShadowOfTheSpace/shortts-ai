@@ -3,10 +3,10 @@ import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
-import { AuthErrors } from "~/app/auth/_libs/components/components";
 import { Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
-import { userAuthValidationSchema } from "~/_modules/users/users.client";
+import { userAuthValidationSchema } from "~/_modules/users/users";
+import { AuthErrors } from "~/app/auth/_libs/components/components";
 import { signUp } from "../../actions/actions";
 import { SignInButton } from "../sign-up-button/sign-up-button";
 

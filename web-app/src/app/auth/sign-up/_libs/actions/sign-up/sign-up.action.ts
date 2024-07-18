@@ -6,8 +6,8 @@ import { DEFAULT_SALT_ROUNDS } from "~/_libs/constants/constants";
 import { AppRoute } from "~/_libs/enums/enums";
 import { auth } from "~/_libs/modules/auth/auth";
 import { type ActionErrorState } from "~/_libs/types/types";
-import { userDao } from "~/_modules/users/users";
-import { userAuthValidationSchema } from "~/_modules/users/users.client";
+import { userAuthValidationSchema } from "~/_modules/users/users";
+import { userDao } from "~/_modules/users/users.server-only";
 import { formatValidationError } from "~/_utils/utils";
 
 const signUp = async (
