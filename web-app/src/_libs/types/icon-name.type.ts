@@ -6,8 +6,11 @@ type IconName =
   | "folder"
   | "loader"
   | "logOut"
+  | "partyPopper"
   | "rocket"
   | "settings"
-  | "sparkles";
+  | "sparkles"
+  | "testTube"
+  | "wand";
 
 export { type IconName };
