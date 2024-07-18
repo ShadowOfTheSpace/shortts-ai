@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
               <span className="text-accent">AI-generated</span> videos in a
               flash!
             </h1>
-            <p className="max-w-lg text-[20px] text-balance">
+            <p className="max-w-[500px] text-[20px] text-balance">
               Shortts.ai simplifies video production with innovative AI tools,
               allowing you to effortlessly create compelling and impactful
               content that resonates with your audience.

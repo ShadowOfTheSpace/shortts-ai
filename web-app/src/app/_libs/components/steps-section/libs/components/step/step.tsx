@@ -42,7 +42,7 @@ const Step: React.FC<Properties> = ({
         </h3>
         <p
           className={cn(
-            "max-w-xl text-[20px] text-balance",
+            "max-w-[600px] text-[20px] text-balance",
             align === "left" && "text-left",
             align === "right" && "text-right"
           )}
