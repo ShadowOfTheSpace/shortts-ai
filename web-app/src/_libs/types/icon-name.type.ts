@@ -6,6 +6,7 @@ type IconName =
   | "folder"
   | "loader"
   | "logOut"
+  | "rocket"
   | "settings"
   | "sparkles";
 

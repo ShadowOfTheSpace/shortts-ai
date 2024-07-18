@@ -7,6 +7,7 @@ import {
   Loader2,
   LogOut,
   LucideProps,
+  Rocket,
   Settings,
   Sparkles,
 } from "lucide-react";
@@ -26,6 +27,7 @@ const iconNameToIcon: Record<
   folder: Folder,
   loader: Loader2,
   logOut: LogOut,
+  rocket: Rocket,
   settings: Settings,
   sparkles: Sparkles,
 };

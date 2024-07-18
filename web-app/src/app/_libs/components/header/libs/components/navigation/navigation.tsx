@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
       <NavigationItem href="#examples" label="Examples" />
       <NavigationItem href="#where-to-start" label="Where to start" />
       <NavigationItem href="#pricing" label="Pricing" />
-      <ButtonLink href="" label="Get started" />
+      <ButtonLink href="" label="Get started" iconName="rocket" />
     </nav>
   );
 };
