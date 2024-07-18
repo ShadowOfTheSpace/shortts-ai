@@ -3,10 +3,9 @@ import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
-import { Input } from "~/_libs/components/components";
+import { FormErrors, Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
 import { userAuthValidationSchema } from "~/_modules/users/users";
-import { AuthErrors } from "~/app/auth/_libs/components/components";
 import { signIn } from "../../actions/actions";
 import { SignInButton } from "../sign-in-button/sign-in-button";
 
@@ -50,7 +49,7 @@ const SignInForm: React.FC = () => {
         name={fields.password.name}
         errors={fields.password.errors}
       />
-      {errors && <AuthErrors errors={errors} />}
+      {errors && <FormErrors errors={errors} />}
       <SignInButton />
     </form>
   );

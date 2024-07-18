@@ -6,7 +6,7 @@ type Properties = {
   errors: string[];
 };
 
-const AuthErrors: React.FC<Properties> = ({ errors }) => {
+const FormErrors: React.FC<Properties> = ({ errors }) => {
   const { pending } = useFormStatus();
 
   if (pending) {
@@ -25,4 +25,4 @@ const AuthErrors: React.FC<Properties> = ({ errors }) => {
   );
 };
 
-export { AuthErrors };
+export { FormErrors };
