@@ -17,6 +17,7 @@ const Sidebar: React.FC = () => {
           iconName="folder"
           label="My videos"
           to={AppRoute.VIDEOS}
+          childRoutes={[AppRoute.VIDEO_$ID]}
         />
         <NavigationLink
           iconName="creditCard"

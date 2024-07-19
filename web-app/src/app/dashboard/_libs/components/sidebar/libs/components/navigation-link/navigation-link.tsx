@@ -4,18 +4,28 @@ import { usePathname } from "next/navigation";
 import { Icon } from "~/_libs/components/components";
 import { type AppRoute } from "~/_libs/enums/enums";
 import { type IconName, type ValueOf } from "~/_libs/types/types";
-import { cn } from "~/_utils/utils";
+import { checkIfLinkMatchPattern, cn } from "~/_utils/utils";
 
 type Properties = {
   iconName: IconName;
   label: string;
   to: ValueOf<typeof AppRoute>;
+  childRoutes?: ValueOf<typeof AppRoute>[];
 };
 
-const NavigationLink: React.FC<Properties> = ({ iconName, label, to }) => {
+const NavigationLink: React.FC<Properties> = ({
+  childRoutes = [],
+  iconName,
+  label,
+  to,
+}) => {
   const pathname = usePathname();
 
-  const isActive = pathname === to;
+  const isActive =
+    pathname === to ||
+    childRoutes.some((pattern) => {
+      return checkIfLinkMatchPattern(pathname, pattern);
+    });
 
   return (
     <Link
