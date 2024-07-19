@@ -10,6 +10,8 @@ import {
   Loader2,
   LogOut,
   LucideProps,
+  PauseCircle,
+  PlayCircle,
   Settings,
   Sparkles,
 } from "lucide-react";
@@ -32,6 +34,8 @@ const iconNameToIcon: Record<
   folder: Folder,
   loader: Loader2,
   logOut: LogOut,
+  pause: PauseCircle,
+  play: PlayCircle,
   settings: Settings,
   sparkles: Sparkles,
 };

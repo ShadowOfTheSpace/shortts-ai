@@ -9,6 +9,8 @@ type IconName =
   | "folder"
   | "loader"
   | "logOut"
+  | "pause"
+  | "play"
   | "settings"
   | "sparkles";
 
