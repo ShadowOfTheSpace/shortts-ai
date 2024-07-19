@@ -6,5 +6,6 @@ export {
   SubtitlesTable,
   UploadedFilesTable,
   UsersTable,
+  UsersVideosTable,
   VideosTable,
 } from "./schema/schema.js";

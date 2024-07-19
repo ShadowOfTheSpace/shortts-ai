@@ -5,6 +5,7 @@ export {
   SubtitlesTable,
   UploadedFilesTable,
   UsersTable,
+  UsersVideosTable,
   VideosTable,
   db,
   eq,

@@ -22,6 +22,13 @@
       "when": 1720737525835,
       "tag": "0002_add_users_table",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1721416131128,
+      "tag": "0003_add_users_videos_table",
+      "breakpoints": true
     }
   ]
 }

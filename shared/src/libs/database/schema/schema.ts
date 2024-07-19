@@ -230,6 +230,43 @@ const UsersTable = pgTable("users", {
     }),
 });
 
+const UsersVideosTable = pgTable("users_videos", {
+  userId: uuid("user_id")
+    .notNull()
+    .references(() => {
+      return UsersTable.id;
+    }),
+  videoId: uuid("video_id")
+    .notNull()
+    .references(() => {
+      return VideosTable.id;
+    }),
+  createdAt: timestamp("created_at", {
+    withTimezone: true,
+  })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => {
+      return new Date();
+    }),
+});
+
+const UsersVideosRelation = relations(UsersVideosTable, ({ one }) => {
+  return {
+    user: one(UsersTable, {
+      fields: [UsersVideosTable.userId],
+      references: [UsersTable.id],
+    }),
+    video: one(VideosTable, {
+      fields: [UsersVideosTable.videoId],
+      references: [VideosTable.id],
+    }),
+  };
+});
+
 export {
   AudioRelations,
   AudiosTable,
@@ -242,6 +279,8 @@ export {
   SubtitlesTable,
   UploadedFilesTable,
   UsersTable,
+  UsersVideosRelation,
+  UsersVideosTable,
   VideoRelations,
   VideosTable,
   VideoStatusEnum,
