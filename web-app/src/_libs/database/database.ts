@@ -1,1 +1,1 @@
-export { UsersTable, db, eq } from "@shortts-ai/shared";
+export { UsersTable, VideosTable, db, eq } from "@shortts-ai/shared";
