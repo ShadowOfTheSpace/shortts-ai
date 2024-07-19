@@ -4,6 +4,7 @@ import { parseWithZod } from "@conform-to/zod";
 import { useFormState } from "react-dom";
 import { Button, FormErrors, Select } from "~/_libs/components/components";
 import { type ActionErrorState } from "~/_libs/types/types";
+import { colorPaletteToColors } from "~/_modules/videos/libs/maps/maps";
 import {
   COLOR_PALETTES,
   createVideoValidationSchema,
@@ -13,6 +14,7 @@ import {
 } from "~/_modules/videos/videos";
 import { capitalizeFirstLetter } from "~/_utils/utils";
 import { createVideo } from "../../actions/actions";
+import { ColorPalettePreview } from "../color-palette-preview/color-palette-preview";
 
 const CreateVideoForm: React.FC = () => {
   const [errors, action] = useFormState<ActionErrorState, FormData>(
@@ -79,7 +81,12 @@ const CreateVideoForm: React.FC = () => {
               key={index}
               text={capitalizeFirstLetter(colorPalette)}
               value={colorPalette}
-            />
+              className="justify-between gap-x-[30px]"
+            >
+              <ColorPalettePreview
+                colors={colorPaletteToColors[colorPalette]}
+              />
+            </Select.Item>
           );
         })}
       </Select>
