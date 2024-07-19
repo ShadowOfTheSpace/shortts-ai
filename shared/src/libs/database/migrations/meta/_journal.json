@@ -29,6 +29,13 @@
       "when": 1721416131128,
       "tag": "0003_add_users_videos_table",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1721418349688,
+      "tag": "0004_add_composite_primary_key_to_users_videos_table",
+      "breakpoints": true
     }
   ]
 }

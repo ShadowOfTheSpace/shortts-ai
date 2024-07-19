@@ -4,6 +4,7 @@ import {
   jsonb,
   pgEnum,
   pgTable,
+  primaryKey,
   smallint,
   text,
   timestamp,
@@ -230,29 +231,37 @@ const UsersTable = pgTable("users", {
     }),
 });
 
-const UsersVideosTable = pgTable("users_videos", {
-  userId: uuid("user_id")
-    .notNull()
-    .references(() => {
-      return UsersTable.id;
-    }),
-  videoId: uuid("video_id")
-    .notNull()
-    .references(() => {
-      return VideosTable.id;
-    }),
-  createdAt: timestamp("created_at", {
-    withTimezone: true,
-  })
-    .notNull()
-    .defaultNow(),
-  updatedAt: timestamp("updated_at", { withTimezone: true })
-    .notNull()
-    .defaultNow()
-    .$onUpdate(() => {
-      return new Date();
-    }),
-});
+const UsersVideosTable = pgTable(
+  "users_videos",
+  {
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => {
+        return UsersTable.id;
+      }),
+    videoId: uuid("video_id")
+      .notNull()
+      .references(() => {
+        return VideosTable.id;
+      }),
+    createdAt: timestamp("created_at", {
+      withTimezone: true,
+    })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => {
+        return new Date();
+      }),
+  },
+  (table) => {
+    return {
+      pk: primaryKey({ columns: [table.userId, table.videoId] }),
+    };
+  }
+);
 
 const UsersVideosRelation = relations(UsersVideosTable, ({ one }) => {
   return {
