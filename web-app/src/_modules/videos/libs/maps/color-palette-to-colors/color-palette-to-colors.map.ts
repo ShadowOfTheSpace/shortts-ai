@@ -1,5 +1,5 @@
-import { ValueOfArray } from "~/_libs/types/types";
-import { COLOR_PALETTES } from "../../constants/constants";
+import { type ValueOfArray } from "~/_libs/types/types";
+import { type COLOR_PALETTES } from "../../constants/constants";
 
 const colorPaletteToColors: Record<
   ValueOfArray<typeof COLOR_PALETTES>,
