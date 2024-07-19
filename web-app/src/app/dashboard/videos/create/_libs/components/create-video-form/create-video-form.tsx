@@ -4,7 +4,10 @@ import { parseWithZod } from "@conform-to/zod";
 import { useFormState } from "react-dom";
 import { Button, FormErrors, Select } from "~/_libs/components/components";
 import { type ActionErrorState } from "~/_libs/types/types";
-import { colorPaletteToColors } from "~/_modules/videos/libs/maps/maps";
+import {
+  colorPaletteToColors,
+  voiceToAudioExample,
+} from "~/_modules/videos/libs/maps/maps";
 import {
   COLOR_PALETTES,
   createVideoValidationSchema,
@@ -15,6 +18,7 @@ import {
 import { capitalizeFirstLetter } from "~/_utils/utils";
 import { createVideo } from "../../actions/actions";
 import { ColorPalettePreview } from "../color-palette-preview/color-palette-preview";
+import { VoiceAudioExample } from "../voice-audio-example/voice-audio-example";
 
 const CreateVideoForm: React.FC = () => {
   const [errors, action] = useFormState<ActionErrorState, FormData>(
@@ -98,11 +102,18 @@ const CreateVideoForm: React.FC = () => {
       >
         {VOICES.map((voice, index) => {
           return (
-            <Select.Item
-              key={index}
-              text={capitalizeFirstLetter(voice)}
-              value={voice}
-            />
+            <div className="relative flex items-center w-full" key={index}>
+              <VoiceAudioExample
+                audioPath={voiceToAudioExample[voice]}
+                className="right-[35px] z-[1] absolute peer"
+                key={index}
+              />
+              <Select.Item
+                text={capitalizeFirstLetter(voice)}
+                value={voice}
+                className="peer-has-[:hover]:bg-divider/15 grow"
+              />
+            </div>
           );
         })}
       </Select>
