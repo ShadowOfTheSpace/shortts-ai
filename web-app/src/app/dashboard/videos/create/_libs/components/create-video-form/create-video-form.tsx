@@ -2,8 +2,7 @@
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useFormState } from "react-dom";
-import { Button, FormErrors } from "~/_libs/components/components";
-import { Select } from "~/_libs/components/select/select";
+import { Button, FormErrors, Select } from "~/_libs/components/components";
 import { type ActionErrorState } from "~/_libs/types/types";
 import {
   COLOR_PALETTES,
