@@ -9,7 +9,7 @@ import { SignInForm } from "./_libs/components/components";
 const SignInPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center gap-[20px] bg-tertiary shadow-md p-[40px] rounded-[12px]">
-      <h1 className="font-bold text-[40px] text-center">Sign In</h1>
+      <h2 className="font-bold text-[40px] text-center">Sign In</h2>
       <SignInForm />
       <AuthDivider />
       <GoogleOauthForm />
