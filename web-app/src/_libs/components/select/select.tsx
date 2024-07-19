@@ -17,7 +17,7 @@ import { Icon } from "../components";
 import { SelectItem } from "./libs/components/components";
 
 type Properties = {
-  children: React.ReactElement<typeof SelectItem>[];
+  children: React.ReactNode;
   metadata: FieldMetadata<string>;
   className?: string;
   description?: string;
