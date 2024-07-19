@@ -2,7 +2,7 @@
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useFormState } from "react-dom";
-import { Button, FormErrors, Select } from "~/_libs/components/components";
+import { FormErrors, Select } from "~/_libs/components/components";
 import { type ActionErrorState } from "~/_libs/types/types";
 import {
   colorPaletteToColors,
@@ -18,6 +18,7 @@ import {
 import { capitalizeFirstLetter } from "~/_utils/utils";
 import { createVideo } from "../../actions/actions";
 import { ColorPalettePreview } from "../color-palette-preview/color-palette-preview";
+import { CreateVideoButton } from "../create-video-button/create-video-button";
 import { VoiceAudioExample } from "../voice-audio-example/voice-audio-example";
 
 const CreateVideoForm: React.FC = () => {
@@ -118,7 +119,7 @@ const CreateVideoForm: React.FC = () => {
         })}
       </Select>
       {errors && <FormErrors errors={errors} />}
-      <Button label="Create" iconName="sparkles" className="mt-[20px]" />
+      <CreateVideoButton />
     </form>
   );
 };
