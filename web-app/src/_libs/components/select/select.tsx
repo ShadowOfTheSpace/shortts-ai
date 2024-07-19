@@ -20,6 +20,7 @@ type Properties = {
   children: React.ReactElement<typeof SelectItem>[];
   metadata: FieldMetadata<string>;
   className?: string;
+  description?: string;
   isDisabled?: boolean;
   label?: string;
   placeholder?: string;
@@ -29,6 +30,7 @@ const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
   children,
   metadata,
   className,
+  description,
   isDisabled,
   label,
   placeholder,
@@ -50,7 +52,7 @@ const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
   }, []);
 
   return (
-    <div className="flex flex-col gap-[2px]">
+    <div className="flex flex-col">
       {label && (
         <label htmlFor={metadata.id} className="font-bold text-[16px]">
           {label}
@@ -77,10 +79,7 @@ const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
           ref={triggerRef}
         >
           <RadixSelectValue placeholder={placeholder} />
-          <RadixSelectIcon
-            asChild
-            className="flex justify-center items-center text-divider shrink-0"
-          >
+          <RadixSelectIcon asChild className="text-divider shrink-0">
             <Icon name="chevronDown" />
           </RadixSelectIcon>
         </RadixSelectTrigger>
@@ -99,9 +98,12 @@ const Select: React.FC<Properties> & { Item: typeof SelectItem } = ({
           </RadixSelectContent>
         </RadixSelectPortal>
       </RadixSelectRoot>
+      <p className="mt-[2px] ml-[5px] text-[12px] text-divider">
+        {description}
+      </p>
       <span
         className={cn(
-          "text-[12px] text-error min-h-[calc(1em*1.5)] ml-[5px]",
+          "text-[12px] text-error min-h-[calc(1em*1.5)] ml-[5px] mt-[-2px] leading-tight",
           !metadata.errors && "opacity-0"
         )}
       >
