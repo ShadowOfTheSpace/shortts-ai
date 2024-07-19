@@ -1,6 +1,6 @@
 const AppRoute = {
   BILLING: "/dashboard/billing",
-  CREATE_VIDEO: "/dashboard/videos/create",
+  CREATE_VIDEO: "/dashboard/create-video",
   ROOT: "/",
   SETTINGS: "/dashboard/settings",
   SIGN_IN: "/auth/sign-in",
