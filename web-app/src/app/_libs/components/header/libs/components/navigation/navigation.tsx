@@ -1,5 +1,4 @@
-import { ButtonLink } from "~/_libs/components/components";
-import { NavigationItem } from "./libs/components/components";
+import { ButtonLink, NavigationItem } from "~/_libs/components/components";
 
 const Navigation: React.FC = () => {
   return (
