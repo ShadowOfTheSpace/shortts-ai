@@ -31,7 +31,7 @@ const RootLayout: React.FC<Properties> = ({ children }) => {
         type="font/woff2"
       />
       <body
-        className={`${baloo.variable} ${roboto.variable} font-roboto text-text`}
+        className={`${baloo.variable} ${roboto.variable} font-roboto text-text flex flex-col min-h-[100dvh]`}
       >
         {children}
       </body>
