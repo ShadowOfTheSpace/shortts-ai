@@ -1,9 +1,13 @@
 import {
   AlertTriangle,
+  Check,
   Chrome,
   Clapperboard,
   CreditCard,
+  Crown,
   Folder,
+  Gift,
+  Lightbulb,
   Loader2,
   LogOut,
   LucideProps,
@@ -13,6 +17,7 @@ import {
   Sparkles,
   TestTube2,
   WandSparkles,
+  X,
 } from "lucide-react";
 import { type ForwardRefExoticComponent, type RefAttributes } from "react";
 import { IconName } from "~/_libs/types/types";
@@ -24,10 +29,15 @@ const iconNameToIcon: Record<
   >
 > = {
   alert: AlertTriangle,
+  check: Check,
   chrome: Chrome,
   clapperboard: Clapperboard,
   creditCard: CreditCard,
+  cross: X,
+  crown: Crown,
   folder: Folder,
+  gift: Gift,
+  lightbulb: Lightbulb,
   loader: Loader2,
   logOut: LogOut,
   partyPopper: PartyPopper,

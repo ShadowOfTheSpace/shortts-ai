@@ -1,6 +1,7 @@
 import {
   Header,
   HeroSection,
+  PricingSection,
   StepsSection,
 } from "./_libs/components/components";
 
@@ -11,6 +12,7 @@ const LandingPage: React.FC = async () => {
       <main className="flex flex-col items-center gap-y-[100px]">
         <HeroSection />
         <StepsSection />
+        <PricingSection />
       </main>
     </>
   );
