@@ -26,6 +26,6 @@ const STEPS_CONTENT = [
     imageUrl: `${tempStepsImage.src}`,
     title: "Share With Friends",
   },
-];
+] as const;
 
 export { STEPS_CONTENT };
