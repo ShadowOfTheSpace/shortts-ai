@@ -31,7 +31,7 @@ const Step: React.FC<Properties> = ({
           align === "right" && "items-end"
         )}
       >
-        <h3
+        <h2
           className={cn(
             "w-full font-baloo font-bold text-[40px] text-primary leading-tight",
             align === "left" && "text-left",
@@ -39,7 +39,7 @@ const Step: React.FC<Properties> = ({
           )}
         >
           {title}
-        </h3>
+        </h2>
         <p
           className={cn(
             "max-w-[600px] text-[20px] text-balance",
@@ -75,7 +75,7 @@ const Step: React.FC<Properties> = ({
           width={633}
           height={471}
           priority={true}
-          className="z-[1] border-[2px] border-primary bg-white rounded-[10px] w-full min-w-[225px] max-w-[450px] min-h-[150px] max-h-[300px] aspect-[450/300] object-cover"
+          className="z-[1] border-[2px] border-primary bg-tertiary rounded-[10px] w-full min-w-[225px] max-w-[450px] min-h-[150px] max-h-[300px] aspect-[450/300] object-cover"
         />
       </div>
     </div>
