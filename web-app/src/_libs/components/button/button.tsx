@@ -20,7 +20,7 @@ const Button: React.FC<Properties> = ({
   return (
     <button
       className={cn(
-        "flex w-full items-center justify-center gap-[10px] text-[16px] bg-primary rounded-[6px] px-[12px] py-[8px] text-background font-bold focus-visible:outline-none has-hover:hover:bg-primary/90 no-hover:active:bg-primary/90",
+        "flex w-full items-center justify-center gap-[10px] text-[16px] bg-primary rounded-[6px] px-[12px] py-[8px] text-background font-bold focus-visible:outline-none has-hover:hover:bg-primary/90 no-hover:active:bg-primary/90 disabled:opacity-80 disabled:pointer-events-none",
         className
       )}
       disabled={isDisabled || isLoading}
