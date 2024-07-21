@@ -7,6 +7,7 @@ import { HTTPCode } from "~/libs/enums/enums.js";
 import { ValidationError } from "~/libs/exceptions/exceptions.js";
 import { type ValidationSchema } from "~/libs/types/types.js";
 import { type Config } from "../config/config.js";
+import { SocketService } from "../socket/socket.js";
 import { ServerErrorType } from "./libs/enums/enums.js";
 import {
   type ServerApplicationRoute,
@@ -17,23 +18,27 @@ import {
 type Constructor = {
   config: Config;
   routes: ServerApplicationRoute[];
+  socketService: SocketService;
 };
 
 class BaseServerApplication {
   private app: FastifyInstance;
   private config: Config;
   private routes: ServerApplicationRoute[];
+  private socketService: SocketService;
 
-  constructor({ config, routes }: Constructor) {
+  constructor({ config, routes, socketService }: Constructor) {
     this.app = Fastify({ ignoreTrailingSlash: true });
     this.config = config;
     this.routes = routes;
+    this.socketService = socketService;
   }
 
   public async init() {
     this.initValidationCompiler();
     this.initErrorHandler();
     this.initRoutes();
+    this.initSocket();
 
     try {
       await this.app.listen({
@@ -93,6 +98,10 @@ class BaseServerApplication {
         return schema.parse(data) as R;
       };
     });
+  }
+
+  private initSocket() {
+    this.socketService.initialize(this.app.server);
   }
 
   private initRoutes() {
