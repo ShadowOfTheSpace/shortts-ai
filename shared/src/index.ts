@@ -7,6 +7,7 @@ export {
   UsersTable,
   UsersVideosTable,
   VideosTable,
+  and,
   db,
   eq,
 } from "./libs/database/database.js";
