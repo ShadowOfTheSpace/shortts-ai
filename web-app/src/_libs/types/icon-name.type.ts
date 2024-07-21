@@ -8,16 +8,24 @@ type IconName =
   | "clapperboard"
   | "comment"
   | "creditCard"
+  | "cross"
+  | "crown"
   | "film"
   | "folder"
+  | "gift"
   | "hourglass"
   | "images"
+  | "lightbulb"
   | "loader"
   | "logOut"
+  | "partyPopper"
   | "pause"
   | "play"
+  | "rocket"
   | "scrollText"
   | "settings"
-  | "sparkles";
+  | "sparkles"
+  | "testTube"
+  | "wand";
 
 export { type IconName };

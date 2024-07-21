@@ -1,12 +1,11 @@
-import Image from "next/image";
-import logo from "~/_assets/images/shortts-ai-logo.svg";
+import { Logo } from "~/_libs/components/components";
 import { AppRoute } from "~/_libs/enums/enums";
 import { NavigationLink, SignOutForm } from "./libs/components/components";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="flex flex-col gap-[50px] bg-tertiary shadow-md p-[30px] rounded-r-[20px] shrink-0">
-      <Image src={logo} alt="Shortts-ai-logo" priority={true} />
+    <div className="flex flex-col gap-[50px] bg-tertiary shadow-md p-[30px] rounded-r-[20px]">
+      <Logo className="shrink-0" />
       <div className="flex flex-col -mx-[15px] h-full">
         <NavigationLink
           iconName="clapperboard"
