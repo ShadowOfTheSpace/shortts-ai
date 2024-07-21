@@ -27,11 +27,11 @@ const Button: React.FC<Properties> = ({
     >
       {isLoading ? (
         <div className="flex justify-center items-center min-h-[calc(1em*1.5)]">
-          <Icon name={"loader"} className="text-white animate-spin" />
+          <Icon name={"loader"} className="text-background animate-spin" />
         </div>
       ) : (
         <>
-          {iconName && <Icon className="text-white" name={iconName} />}
+          {iconName && <Icon className="text-background" name={iconName} />}
           {label}
         </>
       )}

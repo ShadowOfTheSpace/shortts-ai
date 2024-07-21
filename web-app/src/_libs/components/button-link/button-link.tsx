@@ -24,7 +24,7 @@ const ButtonLink: React.FC<Properties> = ({
         className
       )}
     >
-      {iconName && <Icon className="text-white" name={iconName} />}
+      {iconName && <Icon className="text-background" name={iconName} />}
       {label}
     </Link>
   );
