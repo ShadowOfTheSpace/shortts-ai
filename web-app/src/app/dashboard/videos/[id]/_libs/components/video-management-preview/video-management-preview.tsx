@@ -1,9 +1,14 @@
 "use client";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { Button, Input, Skeleton } from "~/_libs/components/components";
+import {
+  socket,
+  SocketEvent,
+  SocketNamespace,
+} from "~/_libs/modules/socket/socket";
 import { ActionErrorState } from "~/_libs/types/types";
 import {
   updateVideoValidationSchema,
@@ -52,6 +57,59 @@ const VideoManagementPreview: React.FC<Properties> = ({
   });
 
   const isFormDisabled = videoInfo.status !== "completed";
+
+  const handleUpdateVideoStatus = useCallback(
+    (newStatus: VideoDto["status"]) => {
+      setVideoInfo((prevInfo) => {
+        return { ...prevInfo, status: newStatus };
+      });
+    },
+    []
+  );
+
+  const handleUpdateVideoTextContent = useCallback(
+    (
+      newTextContent: Pick<VideoDto, "caption" | "hashtags" | "text" | "title">
+    ) => {
+      setVideoInfo((prevInfo) => {
+        return {
+          ...prevInfo,
+          caption: newTextContent.caption,
+          hashtags: getHashTagsString(newTextContent.hashtags),
+          text: newTextContent.text,
+          title: newTextContent.title,
+        };
+      });
+    },
+    []
+  );
+
+  const handleUpdateVideoFile = useCallback((newFileUrl: string) => {
+    setVideoInfo((prevInfo) => {
+      return {
+        ...prevInfo,
+        fileUrl: newFileUrl,
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    socket
+      .getInstance(SocketNamespace.VIDEO)
+      .emit(SocketEvent.UPDATE_VIDEO_INFO_JOIN_ROOM, id)
+      .on(SocketEvent.UPDATE_VIDEO_STATUS, handleUpdateVideoStatus)
+      .on(SocketEvent.UPDATE_VIDEO_TEXT_CONTENT, handleUpdateVideoTextContent)
+      .on(SocketEvent.UPDATE_VIDEO_FILE, handleUpdateVideoFile);
+  }, [id]);
+
+  useEffect(() => {
+    for (const fieldName in videoInfo) {
+      form.update({
+        name: fieldName,
+        value: videoInfo[fieldName as keyof typeof videoInfo] ?? "",
+      });
+    }
+  }, [videoInfo]);
 
   return (
     <div className="flex flex-col gap-[40px] grow">
