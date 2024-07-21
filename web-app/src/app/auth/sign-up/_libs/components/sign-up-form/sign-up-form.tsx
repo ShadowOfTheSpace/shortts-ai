@@ -40,7 +40,7 @@ const SignUpForm: React.FC = () => {
       id={form.id}
       onSubmit={form.onSubmit}
       action={action}
-      className="flex flex-col gap-[5px] w-[400px]"
+      className="flex flex-col gap-[5px] w-full sm:w-[400px]"
     >
       <Input
         placeholder="Enter your email"
