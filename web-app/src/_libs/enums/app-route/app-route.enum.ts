@@ -6,6 +6,7 @@ const AppRoute = {
   SIGN_IN: "/auth/sign-in",
   SIGN_UP: "/auth/sign-up",
   VIDEOS: "/dashboard/videos",
+  VIDEO_$ID: "/dashboard/videos/[id]",
 } as const;
 
 export { AppRoute };
