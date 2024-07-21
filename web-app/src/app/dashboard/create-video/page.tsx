@@ -13,7 +13,9 @@ const CreateVideoPage: React.FC = async () => {
   return (
     <div className="flex justify-center items-center w-full min-h-[100dvh]">
       <div className="flex flex-col gap-[20px] bg-tertiary shadow-md p-[40px] rounded-[12px]">
-        <h2 className="font-bold text-[40px] text-center">Create New Video</h2>
+        <h2 className="font-baloo font-bold text-[40px] text-center">
+          Create New Video
+        </h2>
         <CreateVideoForm />
       </div>
     </div>
