@@ -8,7 +8,7 @@ type Properties = {
 
 const RootLayout: React.FC<Properties> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-pt-[120px] scroll-smooth">
       <link
         rel="preload"
         href="/_next/static/media/d86cb100f71d6b8d-s.p.woff2"

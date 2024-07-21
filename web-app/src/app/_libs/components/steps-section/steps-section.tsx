@@ -3,7 +3,7 @@ import { STEPS_CONTENT } from "./libs/constants/constants";
 
 const StepsSection: React.FC = () => {
   return (
-    <section className="flex justify-center w-full">
+    <section id="where-to-start" className="flex justify-center w-full">
       <div className="flex flex-col items-center gap-y-[60px] px-[30px] w-full max-w-[1500px]">
         <h1 className="font-baloo font-bold text-[60px]">Where to Start?</h1>
         <div className="relative flex flex-col gap-y-[120px] w-full">

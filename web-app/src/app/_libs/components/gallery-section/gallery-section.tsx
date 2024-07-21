@@ -2,7 +2,7 @@ import { GalleryItem } from "./libs/components/components";
 
 const GallerySection: React.FC = () => {
   return (
-    <section className="flex justify-center w-full">
+    <section id="examples" className="flex justify-center w-full">
       <div className="flex flex-col items-center gap-y-[60px] px-[30px] w-full max-w-[1500px]">
         <h1 className="font-baloo font-bold text-[60px]">
           <span className="text-primary">Story.</span>{" "}
