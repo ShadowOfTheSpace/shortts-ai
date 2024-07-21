@@ -10,6 +10,8 @@ type IconName =
   | "creditCard"
   | "cross"
   | "crown"
+  | "eye"
+  | "eyeOff"
   | "film"
   | "folder"
   | "gift"

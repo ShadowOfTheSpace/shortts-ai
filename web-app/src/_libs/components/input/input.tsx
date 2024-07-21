@@ -7,12 +7,14 @@ type Properties = {
   errors?: string[];
   inputClassName?: string;
   skeletonClassName?: string;
+  isAutoCompleteDisabled?: boolean;
   isDisabled?: boolean;
   isLoading?: boolean;
   key?: string;
   label?: string;
   name?: string;
   rows?: number;
+  type?: "password" | "text";
 };
 
 const Input: React.FC<Properties> = ({
@@ -21,12 +23,14 @@ const Input: React.FC<Properties> = ({
   errors,
   inputClassName,
   skeletonClassName,
+  isAutoCompleteDisabled = false,
   isDisabled,
   isLoading,
   key,
   label,
   name,
   rows,
+  type = "text",
 }) => {
   return (
     <div className="flex flex-col gap-[2px] w-full">
@@ -62,6 +66,8 @@ const Input: React.FC<Properties> = ({
           name={name}
           defaultValue={defaultValue}
           disabled={isDisabled}
+          type={type}
+          autoComplete={isAutoCompleteDisabled ? "off" : "on"}
         />
       )}
       <span

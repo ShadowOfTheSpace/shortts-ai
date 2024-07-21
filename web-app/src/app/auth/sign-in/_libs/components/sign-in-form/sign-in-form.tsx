@@ -2,10 +2,12 @@
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
 import { useSearchParams } from "next/navigation";
+import { useCallback, useState } from "react";
 import { useFormState } from "react-dom";
 import { FormErrors, Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
 import { userAuthValidationSchema } from "~/_modules/users/users";
+import { PasswordVisibilityButton } from "~/app/auth/_libs/components/components";
 import { signIn } from "../../actions/actions";
 import { SignInButton } from "../sign-in-button/sign-in-button";
 
@@ -26,6 +28,14 @@ const SignInForm: React.FC = () => {
     shouldRevalidate: "onInput",
   });
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+
+  const togglePasswordVisibility = useCallback(() => {
+    setIsPasswordVisible((prevPasswordVisibility) => {
+      return !prevPasswordVisibility;
+    });
+  }, []);
+
   return (
     <form
       id={form.id}
@@ -41,14 +51,24 @@ const SignInForm: React.FC = () => {
         name={fields.email.name}
         errors={fields.email.errors}
       />
-      <Input
-        placeholder="Enter your password"
-        label="Password"
-        defaultValue={fields.password.initialValue}
-        key={fields.password.key}
-        name={fields.password.name}
-        errors={fields.password.errors}
-      />
+      <div className="relative">
+        <Input
+          placeholder="Enter your password"
+          label="Password"
+          defaultValue={fields.password.initialValue}
+          key={fields.password.key}
+          name={fields.password.name}
+          errors={fields.password.errors}
+          inputClassName="pr-[44px]"
+          type={isPasswordVisible ? "text" : "password"}
+          isAutoCompleteDisabled
+        />
+        <PasswordVisibilityButton
+          className="top-[calc(1em*1.5+2px+1px+8px+1em*1.5/2)] right-[10px] absolute -translate-y-[50%]"
+          isVisible={isPasswordVisible}
+          onClick={togglePasswordVisibility}
+        />
+      </div>
       {errors && <FormErrors errors={errors} />}
       <SignInButton />
     </form>
