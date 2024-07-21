@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ButtonLink, Wave } from "~/_libs/components/components";
+import { AppRoute } from "~/_libs/enums/enums";
 
 const HeroSection: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const HeroSection: React.FC = () => {
               content that resonates with your audience.
             </p>
             <ButtonLink
-              href=""
+              href={AppRoute.CREATE_VIDEO}
               label="Create video"
               iconName="sparkles"
               className="max-w-max"
