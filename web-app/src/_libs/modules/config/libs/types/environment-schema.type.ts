@@ -15,6 +15,9 @@ type EnvironmentSchema = {
     EXPIRES_IN: string;
     SECRET: string;
   };
+  WEB_SOCKET: {
+    SERVER_URL: string;
+  };
 };
 
 export { type EnvironmentSchema };

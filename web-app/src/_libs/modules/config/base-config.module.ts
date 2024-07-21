@@ -79,6 +79,14 @@ class BaseConfig implements Config {
           format: String,
         },
       },
+      WEB_SOCKET: {
+        SERVER_URL: {
+          default: null,
+          doc: "Socket server url",
+          env: "NEXT_PUBLIC_WEB_SOCKET_SERVER_URL",
+          format: String,
+        },
+      },
     });
   }
 }
