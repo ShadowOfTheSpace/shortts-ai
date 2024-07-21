@@ -1,5 +1,4 @@
 import Image from "next/image";
-import heroImage from "~/_assets/images/hero-image.svg";
 import { ButtonLink, Wave } from "~/_libs/components/components";
 
 const HeroSection: React.FC = () => {
@@ -27,7 +26,9 @@ const HeroSection: React.FC = () => {
           </div>
           <Image
             alt="Hero-image"
-            src={heroImage}
+            src="/images/hero-image.svg"
+            width={650}
+            height={710}
             priority={true}
             className="mt-[15px] min-w-[400px] max-w-full h-auto basis-[45%] self-start"
           />
