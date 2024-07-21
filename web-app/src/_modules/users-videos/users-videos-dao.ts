@@ -1,4 +1,4 @@
-import { db, UsersVideosTable } from "~/_libs/database/database";
+import { and, db, eq, UsersVideosTable } from "~/_libs/database/database";
 
 class UsersVideosDao {
   async assignVideoToUser(videoId: string, userId: string) {
@@ -11,6 +11,23 @@ class UsersVideosDao {
       .returning();
 
     return assignedVideo ?? null;
+  }
+
+  async findVideoByIdAndUserId(id: string, userId: string) {
+    const videoByIdAndUserId = await db.query.UsersVideosTable.findFirst({
+      where: (usersVideos) => {
+        return and(eq(usersVideos.videoId, id), eq(usersVideos.userId, userId));
+      },
+      with: {
+        video: {
+          with: {
+            file: true,
+          },
+        },
+      },
+    });
+
+    return videoByIdAndUserId ?? null;
   }
 }
 
