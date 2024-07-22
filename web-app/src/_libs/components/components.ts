@@ -1,6 +1,7 @@
 export { ButtonLink } from "./button-link/button-link";
 export { Button } from "./button/button";
 export { FormErrors } from "./form-errors/form-errors";
+export { IconButton } from "./icon-button/icon-button";
 export { Icon } from "./icon/icon";
 export { Input } from "./input/input";
 export { Logo } from "./logo/logo";
