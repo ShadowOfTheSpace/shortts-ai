@@ -4,10 +4,9 @@ import { parseWithZod } from "@conform-to/zod";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
 import { useFormState } from "react-dom";
-import { FormErrors, Input } from "~/_libs/components/components";
+import { FormErrors, IconButton, Input } from "~/_libs/components/components";
 import { ActionErrorState } from "~/_libs/types/types";
 import { userAuthValidationSchema } from "~/_modules/users/users";
-import { PasswordVisibilityButton } from "~/app/auth/_libs/components/components";
 import { signUp } from "../../actions/actions";
 import { SignInButton } from "../sign-up-button/sign-up-button";
 
@@ -62,10 +61,12 @@ const SignUpForm: React.FC = () => {
           type={isPasswordVisible ? "text" : "password"}
           isAutoCompleteDisabled
         />
-        <PasswordVisibilityButton
-          className="top-[calc(1em*1.5+2px+1px+8px+1em*1.5/2)] right-[10px] absolute -translate-y-[50%]"
-          isVisible={isPasswordVisible}
+        <IconButton
+          iconName={isPasswordVisible ? "eye" : "eyeOff"}
+          className="top-[calc(1em*1.5+2px+1px+8px+1em*1.5/2)] right-[10px] absolute p-[2px] -translate-y-[50%]"
+          iconClassName="text-divider"
           onClick={togglePasswordVisibility}
+          title={isPasswordVisible ? "Hide" : "Show"}
         />
       </div>
       {errors && <FormErrors errors={errors} />}
