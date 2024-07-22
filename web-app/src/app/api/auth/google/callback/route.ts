@@ -1,7 +1,8 @@
 import { hash as bcryptHash } from "bcrypt";
 import { type NextRequest, NextResponse } from "next/server";
 import { DEFAULT_SALT_ROUNDS } from "~/_libs/constants/constants";
-import { AppRoute, CookiesName, HTTPCode } from "~/_libs/enums/enums";
+import { AppRoute, CookiesName } from "~/_libs/enums/enums";
+import { HTTPCode } from "~/_libs/enums/enums.server-only";
 import {
   auth,
   googleAuth,
