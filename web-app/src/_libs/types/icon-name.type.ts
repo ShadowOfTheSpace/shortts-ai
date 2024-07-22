@@ -20,6 +20,7 @@ type IconName =
   | "lightbulb"
   | "loader"
   | "logOut"
+  | "menu"
   | "partyPopper"
   | "pause"
   | "play"
