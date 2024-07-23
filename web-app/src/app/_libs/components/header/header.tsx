@@ -62,10 +62,11 @@ const Header: React.FC = () => {
             />
             <Navigation />
             <Image
-              alt=""
+              alt="Menu-image"
               src="/images/hero-image.svg"
               width={190}
               height={210}
+              priority={true}
               className="md:hidden mt-auto"
             />
           </motion.div>
