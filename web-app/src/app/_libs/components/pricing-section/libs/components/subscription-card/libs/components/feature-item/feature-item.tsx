@@ -13,7 +13,7 @@ const FeatureItem: React.FC<Properties> = ({
   label,
 }) => {
   return (
-    <li className="flex gap-x-[10px] w-full text-[20px]">
+    <li className="flex gap-x-[10px] w-full text-[16px] sm:text-[20px]">
       <Icon
         name={isBenefit ? "check" : "cross"}
         className="flex h-[calc(1em*1.5)] text-accent shrink-0"
