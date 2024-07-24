@@ -1,4 +1,4 @@
-import { IconName } from "~/_libs/types/types";
+import { type IconName } from "~/_libs/types/types";
 
 type StepContent = {
   backgroundImageUrl: string;

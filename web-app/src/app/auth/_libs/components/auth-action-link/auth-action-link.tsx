@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "~/_libs/components/components";
-import { IconName } from "~/_libs/types/types";
+import { type IconName } from "~/_libs/types/types";
 
 type Properties = {
   href: string;

@@ -1,4 +1,4 @@
-import { IconName } from "~/_libs/types/icon-name.type";
+import { type IconName } from "~/_libs/types/types";
 import { cn } from "~/_utils/utils";
 import { Icon } from "../components";
 

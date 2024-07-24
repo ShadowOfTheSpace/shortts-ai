@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Icon } from "~/_libs/components/components";
-import { IconName } from "~/_libs/types/types";
+import { type IconName } from "~/_libs/types/types";
 import { cn } from "~/_utils/utils";
 
 type Properties = {

@@ -1,5 +1,5 @@
 import { ButtonLink, Icon } from "~/_libs/components/components";
-import { IconName } from "~/_libs/types/icon-name.type";
+import { type IconName } from "~/_libs/types/types";
 import { FeatureItem } from "./libs/components/components";
 
 type Properties = {

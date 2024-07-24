@@ -33,7 +33,7 @@ import {
   X,
 } from "lucide-react";
 import { type ForwardRefExoticComponent, type RefAttributes } from "react";
-import { IconName } from "~/_libs/types/types";
+import { type IconName } from "~/_libs/types/types";
 
 const iconNameToIcon: Record<
   IconName,
