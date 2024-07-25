@@ -7,7 +7,7 @@ const GallerySection: React.FC = () => {
 
   return (
     <section className="flex flex-col justify-center items-center -mt-[200px] w-full">
-      <Wave className="h-[140px] text-primary scale-[-1]" />
+      <Wave className="-mb-[1px] h-[140px] text-primary scale-[-1]" />
       <div id="examples" className="flex justify-center bg-primary w-full">
         <div className="flex flex-col items-center gap-y-[60px] px-[30px] pb-[30px] w-full max-w-[1500px]">
           <h1 className="font-baloo font-bold text-[60px] text-background">
@@ -37,7 +37,7 @@ const GallerySection: React.FC = () => {
           </ul>
         </div>
       </div>
-      <Wave className="h-[140px] text-primary" />
+      <Wave className="-mt-[1px] h-[140px] text-primary" />
     </section>
   );
 };
