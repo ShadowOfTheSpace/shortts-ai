@@ -4,6 +4,10 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      animation: {
+        "infinity-scroll-left":
+          "infinity-scroll-left var(--scroll-time) linear infinite",
+      },
       colors: {
         accent: "#8840b5",
         background: "#EFE7F4",
@@ -17,6 +21,13 @@ const config: Config = {
       fontFamily: {
         baloo: ["var(--font-baloo)"],
         roboto: ["var(--font-roboto)"],
+      },
+      keyframes: {
+        "infinity-scroll-left": {
+          to: {
+            left: "calc(-1 * var(--element-width))",
+          },
+        },
       },
       screens: {
         "has-hover": { raw: "(hover: hover) and (pointer: fine)" },
