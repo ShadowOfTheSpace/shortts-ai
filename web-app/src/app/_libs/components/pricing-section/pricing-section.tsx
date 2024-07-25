@@ -5,7 +5,7 @@ import { SubscriptionCard } from "./libs/components/components";
 const PricingSection: React.FC = () => {
   return (
     <section className="flex flex-col w-full">
-      <Wave className="-mb-[1px] h-[60px] md:h-[140px] text-background scale-[-1]" />
+      <Wave className="-mb-[2px] h-[60px] md:h-[140px] text-background scale-[-1]" />
       <div id="pricing" className="flex justify-center bg-background w-full">
         <div className="flex flex-col items-center lg:gap-y-[30px] px-[20px] sm:px-[30px] w-full max-w-[1500px]">
           <h1 className="font-baloo font-bold text-[40px] sm:text-[50px] lg:text-[60px]">
@@ -29,7 +29,7 @@ const PricingSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <Wave className="-mt-[1px] h-[60px] md:h-[140px] text-background" />
+      <Wave className="-mt-[2px] h-[60px] md:h-[140px] text-background" />
     </section>
   );
 };
