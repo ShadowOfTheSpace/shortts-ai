@@ -46,4 +46,18 @@ export default RootLayout;
 
 export const metadata: Metadata = {
   title: "Shortts.ai",
+  metadataBase: new URL("http://localhost:3000/"),
+  openGraph: {
+    title: "Shortts.ai",
+    description:
+      "Transform your ideas into stunning AI-generated videos in a flash!",
+    images: {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "OpenGraph-image",
+    },
+    siteName: "Shortts.ai",
+    type: "website",
+  },
 };
