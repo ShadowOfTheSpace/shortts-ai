@@ -60,7 +60,7 @@ const Header: React.FC = () => {
               className="md:hidden self-end"
               onClick={handleMenuClose}
             />
-            <Navigation />
+            <Navigation onClick={handleMenuClose} />
             <Image
               alt="Menu-image"
               src="/images/hero-image.svg"
