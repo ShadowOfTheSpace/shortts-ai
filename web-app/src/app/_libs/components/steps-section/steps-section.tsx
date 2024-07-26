@@ -4,8 +4,8 @@ import { STEPS_CONTENT } from "./libs/constants/constants";
 const StepsSection: React.FC = () => {
   return (
     <section id="where-to-start" className="flex justify-center w-full">
-      <div className="flex flex-col items-center gap-y-[30px] lg:gap-y-[60px] px-[30px] w-full max-w-[1500px]">
-        <h1 className="font-baloo font-bold text-[40px] sm:text-[50px] lg:text-[60px]">
+      <div className="flex flex-col items-center gap-y-[30px] lg:gap-y-[60px] px-[30px] pt-[20px] sm:pt-[30px] w-full max-w-[1500px]">
+        <h1 className="font-baloo font-bold text-[40px] sm:text-[50px] lg:text-[60px] leading-tight">
           Where to Start?
         </h1>
         <div className="relative flex flex-col gap-y-[60px] sm:gap-y-[90px] lg:gap-y-0 xl:gap-y-[30px] w-full">

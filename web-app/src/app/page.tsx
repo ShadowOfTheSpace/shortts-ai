@@ -11,7 +11,7 @@ const LandingPage: React.FC = async () => {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center gap-y-[100px] grow">
+      <main className="flex flex-col items-center gap-y-[50px] sm:gap-y-[100px] grow">
         <HeroSection />
         <GallerySection />
         <StepsSection />

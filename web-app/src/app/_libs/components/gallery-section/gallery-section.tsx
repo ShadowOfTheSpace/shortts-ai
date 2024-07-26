@@ -8,7 +8,10 @@ const GallerySection: React.FC = () => {
   return (
     <section className="flex flex-col justify-center items-center -mt-[200px] w-full">
       <Wave className="-mb-[2px] h-[60px] md:h-[140px] text-primary scale-[-1]" />
-      <div id="examples" className="flex justify-center bg-primary w-full">
+      <div
+        id="examples"
+        className="flex justify-center bg-primary pt-[20px] sm:pt-[30px] w-full"
+      >
         <div className="flex flex-col items-center gap-y-[30px] lg:gap-y-[60px] px-[30px] pb-[30px] w-full max-w-[1500px] overflow-x-hidden">
           <h1 className="font-baloo font-bold text-[40px] text-background text-center sm:text-[50px] lg:text-[60px] leading-tight">
             Story. Illustrations. Effects.

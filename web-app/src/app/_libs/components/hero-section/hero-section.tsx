@@ -6,7 +6,7 @@ const HeroSection: React.FC = () => {
   return (
     <section className="md:before:top-0 md:before:absolute flex flex-col md:before:bg-background w-full md:before:w-full md:before:h-[90px]">
       <div className="flex justify-center bg-background pb-[140px] w-full">
-        <div className="flex justify-between items-center gap-x-[30px] h-[calc(100dvh-80px-70px)] px-[20px] sm:px-[30px] w-full max-w-[1500px] lg:h-[min(100vh,800px)]">
+        <div className="flex justify-between items-center gap-x-[30px] h-[calc(100svh-80px-30px)] px-[20px] sm:px-[30px] w-full max-w-[1500px] lg:h-[min(100vh,800px)]">
           <div className="flex flex-col gap-y-[30px] md:basis-[70%] lg:basis-[55%]">
             <h1 className="font-baloo font-bold text-[40px] text-balance sm:text-[50px] lg:text-[60px] leading-tight">
               Transform your ideas into stunning{" "}
