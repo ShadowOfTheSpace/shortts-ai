@@ -7,13 +7,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background-color: #d0b5e1;
+  width: 8px;
+  height: 8px;
+  background-color: #472659;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b182ce;
+  background-color: #8840b595;
   border-radius: 50px;
   transition: color 0.15s;
 }
