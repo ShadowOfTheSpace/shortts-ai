@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   );
 
   return (
-    <header className="top-0 z-10 sticky flex justify-center bg-background md:bg-background/65 md:backdrop-blur-md w-full transition-colors">
+    <header className="top-0 z-10 sticky flex justify-center bg-background md:bg-background/55 shadow md:backdrop-blur-md w-full transition-colors">
       <div className="flex justify-between items-center gap-[60px] px-[20px] sm:px-[30px] py-[15px] w-full max-w-[1500px]">
         <Link href="/">
           <Logo className="w-[142px] sm:w-auto h-[50px] sm:h-auto shrink-0" />
